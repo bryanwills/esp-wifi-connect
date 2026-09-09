@@ -10,6 +10,11 @@ The URL to access the web server is `http://192.168.4.1`.
 
 <img src="assets/ap_v3_2.jpg" width="320" alt="Wi-Fi Configuration v3.2">
 
+## Changelog: v3.3.1
+
+- Bound SSID/password copies into `wifi_config` so a full 32-byte SSID no longer overflows with `strcpy`.
+- Config portal and SmartConfig now handle a maximum-length SSID without truncating or reading past the buffer.
+
 ## Changelog: v3.3.0
 
 - Persist each saved AP's channel in NVS as `channel`, `channel1`, ... `channel9` (same indexing as `password` / `passwordN`). 2.4 GHz (1-14) and 5 GHz (36-177) share one `uint8` key because the channel numbers do not overlap.
